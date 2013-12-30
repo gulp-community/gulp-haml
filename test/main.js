@@ -1,6 +1,7 @@
 var should = require('should');
 var gutil = require('gulp-util');
 var haml = require('../');
+var fs = require('fs');
 
 require('mocha');
 
@@ -9,18 +10,17 @@ describe('gulp haml', function(){
     var hamlStream = haml();
 
     var fakeFile = new gutil.File({
-      base: "/home/proj/haml/",
-      cwd: "/home/proj/",
-      path: "/home/proj/haml/stuff.haml",
-      contents: "!!!5\n%html %head %title\r\n  %body %h1 Test"
+      base: "test/src/",
+      cwd: "test/",
+      path: "test/src/haml.haml",
+      contents: fs.readFileSync('test/src/haml.haml', 'utf8')
     });
 
     hamlStream.once('data', function(newFile){
       should.exist(newFile);
       should.exist(newFile.path);
       should.exist(newFile.contents);
-      newFile.path.should.equal("/home/proj/haml/stuff.html");
-      String(newFile.contents).should.equal("<!DOCTYPE html>\n<html><head><title></title></head><body><h1>Test</h1></body></html>");
+      String(newFile.contents).should.equal(fs.readFileSync('test/expected/haml.html', 'utf8'));
       done();
     });
     hamlStream.write(fakeFile);

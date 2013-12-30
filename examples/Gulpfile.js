@@ -1,5 +1,5 @@
 var gulp = require("gulp");
-var haml = require("../index");
+var haml = require("../");
 
 
 gulp.task("haml", function(){
