@@ -10,10 +10,10 @@ describe('gulp haml', function(){
     var hamlStream = haml();
 
     var fakeFile = new gutil.File({
-      base: "test/src/",
+      base: "test/src",
       cwd: "test/",
       path: "test/src/haml.haml",
-      contents: fs.readFileSync('test/src/haml.haml', 'utf8')
+      contents: fs.readFileSync('test/src/haml.haml')
     });
 
     hamlStream.once('data', function(newFile){
