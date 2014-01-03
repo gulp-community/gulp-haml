@@ -1,7 +1,7 @@
 {
   "name": "gulp-haml",
   "description": "Gulp plugin for haml",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "homepage": "http://github.com/stevelacy/gulp-haml",
   "repository": {
     "type": "git",
