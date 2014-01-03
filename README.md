@@ -1,9 +1,5 @@
-Gulp-Haml 
-===========
-
-(gulp-haml)
-
-
+#Gulp-Haml 
+[![Build Status](https://travis-ci.org/stevelacy/gulp-haml.png?branch=master)](https://travis-ci.org/stevelacy/gulp-haml)
 [![NPM version](https://badge.fury.io/js/gulp-haml.png)](http://badge.fury.io/js/gulp-haml)
 
 ## Information
@@ -20,9 +16,17 @@ Gulp-Haml
 <td>Node Version</td>
 <td>>= 0.8</td>
 </tr>
+<tr>
+<td>Gulp Version</td>
+<td>3.x</td>
+</tr>
 </table>
 
 ## Usage
+#### Install
+    npm install gulp-haml --save
+
+## Examples
 
 ```javascript
 
@@ -64,18 +68,19 @@ gulp.task('default', function(){
 });
 
 ```
-
-Options to the haml stream are passed straight through to the haml module.
-
-## Examples
-
 You can view more examples in the [example folder.](https://github.com/stevelacy/gulp-haml/tree/master/examples)
+
+## Options
+`Object, String`
+
+Options are passed straight through to the [haml](https://npmjs.org/package/haml) module.
+
 
 ## LICENSE
 
 (MIT License)
 
-Copyright (c) 2014 Steve Lacy - Fractal <contact@wearefractal.com> wearefractal.com
+Copyright (c) 2014 Steve Lacy <me@slacy.me> slacy.me - Fractal <contact@wearefractal.com> wearefractal.com
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

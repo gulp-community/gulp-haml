@@ -1,4 +1,4 @@
-var es = require('event-stream');
+var map = require('map-stream');
 var gutil = require('gulp-util');
 var path = require('path');
 var haml = require('haml');
@@ -20,5 +20,5 @@ module.exports = function(options) {
   }
 
   // Return a stream
-  return es.map(hamlStream);
+  return map(hamlStream);
 };
