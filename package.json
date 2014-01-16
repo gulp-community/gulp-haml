@@ -1,7 +1,7 @@
 {
   "name": "gulp-haml",
   "description": "Gulp plugin for haml",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "homepage": "http://github.com/stevelacy/gulp-haml",
   "repository": {
     "type": "git",
@@ -11,8 +11,8 @@
   "main": "./index.js",
   "dependencies": {
     "haml": "~0.4.3",
-    "gulp-util": "~2.2.9",
-    "map-stream": "0.0.4"
+    "gulp-util": "~2.2.10",
+    "map-stream": "~0.1.0"
   },
   "devDependencies": {
     "mocha": "*",
