@@ -62,6 +62,16 @@ gulp.task('haml', function () {
 
 
 
+// Options
+// Change file extension
+gulp.task('haml', function () {
+  gulp.src('./haml/**/*.haml')
+    .pipe(haml({ext: '.php'}))
+    .pipe(gulp.dest('./php'));
+});
+
+
+
 // Default gulp task to run
 gulp.task('default', function(){
   gulp.run('haml', 'one');
@@ -73,7 +83,17 @@ You can view more examples in the [example folder.](https://github.com/stevelacy
 ## Options
 `Object, String`
 
-Options are passed straight through to the [haml](https://npmjs.org/package/haml) module.
+Options are passed straight through to the [haml](https://npmjs.org/package/haml) module with the exclusion of `ext`
+
+### Options.ext
+`ext: String`
+
+Example:
+
+    .pipe(haml({ext: '.php'}))
+    .pipe(haml({ext: '.txt'}))
+
+
 
 
 ## LICENSE
