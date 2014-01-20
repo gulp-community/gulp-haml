@@ -1,17 +1,17 @@
 {
   "name": "gulp-haml",
   "description": "Gulp plugin for haml",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "homepage": "http://github.com/stevelacy/gulp-haml",
   "repository": {
     "type": "git",
     "url": "http://github.com/stevelacy/gulp-haml.git"
   },
-  "author": "Steve Lacy - slacy.me | Fractal wearefractal.com",
+  "author": "Steve Lacy - http://slacy.me | Fractal http://wearefractal.com",
   "main": "./index.js",
   "dependencies": {
     "haml": "~0.4.3",
-    "gulp-util": "~2.2.10",
+    "gulp-util": "~2.2.12",
     "map-stream": "~0.1.0"
   },
   "devDependencies": {
@@ -19,7 +19,7 @@
     "should": "*"
   },
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">= 0.9.0"
   },
   "scripts": {
     "test": "mocha --reporter spec"
