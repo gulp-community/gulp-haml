@@ -1,5 +1,5 @@
 var map = require('map-stream');
-var gutil = require('gulp-util');
+var rext = require('replace-ext');
 var haml = require('haml');
 
 module.exports = function(options) {
@@ -13,7 +13,7 @@ module.exports = function(options) {
     if (file.isStream()) return cb(new Error("gulp-haml: Streaming not supported"));
 
     var html = haml.render(file.contents.toString("utf8"), options);
-    file.path = gutil.replaceExtension(file.path, options.ext);
+    file.path = rext(file.path, options.ext);
     file.contents = new Buffer(html);
 
     cb(null, file);
