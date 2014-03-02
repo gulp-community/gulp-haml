@@ -2,6 +2,8 @@
 [![Build Status](https://travis-ci.org/stevelacy/gulp-haml.png?branch=master)](https://travis-ci.org/stevelacy/gulp-haml)
 [![NPM version](https://badge.fury.io/js/gulp-haml.png)](http://badge.fury.io/js/gulp-haml)
 
+Issues with the output should be reported on [haml](https://github.com/creationix/haml-js)
+
 ## Information
 
 <table>
