@@ -10,7 +10,9 @@
   "author": "Steve Lacy - http://slacy.me | Fractal http://wearefractal.com",
   "main": "./index.js",
   "dependencies": {
-    "haml": "~0.4.3",
+    "gulp-util": "^3.0.0",
+    "haml": "^0.4.3",
+    "hamljs": "^0.6.2",
     "map-stream": "~0.1.0",
     "replace-ext": "0.0.1"
   },
