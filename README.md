@@ -85,7 +85,36 @@ You can view more examples in the [example folder.](https://github.com/stevelacy
 ## Options
 `Object, String`
 
-Options are passed straight through to the [haml](https://npmjs.org/package/haml) module with the exclusion of `ext`
+Options to `gulp-haml` are not passed to the Haml compiler. To pass to the compiler, use `compilerOpts: {}`. (see below)
+
+[creationix/haml-js](https://github.com/creationix/haml-js) is the default compiler, the other option is [visionmedia/haml.js](https://github.com/visionmedia/haml.js) (65% faster).
+
+### Options.compiler
+`compiler: String`
+
+Example:
+```javascript
+.pipe(haml({
+  compiler: 'visionmedia'
+}))
+
+.pipe(haml({
+  compiler: 'creationix'
+}))
+```
+
+### Options.compilerOpts
+`compilerOpts: Object`
+
+Example:
+```javascript
+.pipe(haml({
+  compiler: 'visionmedia',
+  compilerOpts: {
+    cache: false
+  }
+}))
+```
 
 ### Options.ext
 `ext: String`
@@ -94,6 +123,8 @@ Example:
 
     .pipe(haml({ext: '.php'}))
     .pipe(haml({ext: '.txt'}))
+
+
 
 
 
