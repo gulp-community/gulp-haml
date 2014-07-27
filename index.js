@@ -3,9 +3,9 @@ var rext = require('replace-ext');
 var util = require('gulp-util');
 var _ = require('lodash');
 var compilers = {
-      creationix: require('haml'),
-      visionmedia: require('hamljs'),
-    };
+  creationix: require('haml'),
+  visionmedia: require('hamljs'),
+};
 
 module.exports = function(options) {
   var options = _.merge({
