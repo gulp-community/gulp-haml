@@ -6,45 +6,50 @@ var fs = require('fs');
 
 require('mocha');
 
-describe('gulp haml', function(){
-  it('should render haml .haml to HTML .html', function(done){
-    var hamlStream = haml();
+describe('gulp haml', function () {
 
-    var fakeFile = new gutil.File({
-      base: "test/src",
-      cwd: "test/",
-      path: "test/src/haml.haml",
-      contents: fs.readFileSync('test/src/haml.haml')
+  function fakeFile (name) {
+    return new gutil.File({
+      base: 'test/src',
+      cwd: 'test/',
+      path: 'test/src/haml.haml',
+      contents: fs.readFileSync('test/src/' + name + '.haml')
     });
+  }
 
-    hamlStream.once('data', function(newFile){
-      should.exist(newFile);
-      should.exist(newFile.path);
-      should.exist(newFile.contents);
-      String(newFile.contents).should.equal(fs.readFileSync('test/expected/haml.html', 'utf8'));
+  function checkFile (name, ext, done) {
+    return function (file) {
+      should.exist(file);
+      should.exist(file.path);
+      should.exist(file.contents);
+      String(path.extname(file.path)).should.equal('.' + ext);
+      String(file.contents).should.equal(fs.readFileSync('test/expected/' + name + '.html', 'utf8'));
       done();
-    });
-    hamlStream.write(fakeFile);
+    };
+  }
+
+  it('should render haml .haml to HTML .html', function (done){
+    var hamlStream = haml()
+
+    hamlStream.once('data', checkFile('creationix', 'html', done));
+    hamlStream.write(fakeFile('creationix'));
   });
 
-  it('should change the extension to .php if defined by opts.ext', function(done){
-    var hamlStream = haml({ext: '.php'});
-
-    var fakeFile = new gutil.File({
-      base: "test/src",
-      cwd: "test/",
-      path: "test/src/haml.haml",
-      contents: fs.readFileSync('test/src/haml.haml')
+  it('should change the extension to .php if defined by opts.ext', function (done) {
+    var hamlStream = haml({
+      ext: '.php'
     });
 
-    hamlStream.once('data', function(newFile){
-      should.exist(newFile);
-      should.exist(newFile.path);
-      String(path.extname(newFile.path)).should.equal('.php');
-      should.exist(newFile.contents);
-      String(newFile.contents).should.equal(fs.readFileSync('test/expected/haml.html', 'utf8'));
-      done();
+    hamlStream.once('data', checkFile('creationix', 'php', done));
+    hamlStream.write(fakeFile('creationix'));
+  });
+
+  it('should switch compilers if specified in options', function (done) {
+    var hamlStream = haml({
+      compiler: 'visionmedia'
     });
-    hamlStream.write(fakeFile);
+
+    hamlStream.once('data', checkFile('visionmedia', 'html', done));
+    hamlStream.write(fakeFile('visionmedia'));
   });
 });
