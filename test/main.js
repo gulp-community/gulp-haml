@@ -37,8 +37,8 @@ describe('gulp haml', function () {
 
   it('should change the extension to .php if defined by opts.ext', function (done) {
     var hamlStream = haml({
-          ext: '.php'
-        });
+      ext: '.php'
+    });
 
     hamlStream.once('data', checkFile('creationix', 'php', done));
     hamlStream.write(fakeFile('creationix'));
@@ -46,8 +46,8 @@ describe('gulp haml', function () {
 
   it('should switch compilers if specified in options', function (done) {
     var hamlStream = haml({
-          compiler: 'visionmedia'
-        });
+      compiler: 'visionmedia'
+    });
 
     hamlStream.once('data', checkFile('visionmedia', 'html', done));
     hamlStream.write(fakeFile('visionmedia'));
