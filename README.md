@@ -1,25 +1,25 @@
-#Gulp-Haml 
+#gulp-Haml
 [![Build Status](https://travis-ci.org/stevelacy/gulp-haml.png?branch=master)](https://travis-ci.org/stevelacy/gulp-haml)
 [![NPM version](https://badge.fury.io/js/gulp-haml.png)](http://badge.fury.io/js/gulp-haml)
 
-Issues with the output should be reported on [haml](https://github.com/creationix/haml-js)
+Issues with the output should be reported on [haml-js](https://github.com/creationix/haml-js) OR [haml.js](https://github.com/visionmedia/haml.js) depending on compiler used
 
 ## Information
 
 <table>
-<tr> 
+<tr>
 <td>Package</td><td>gulp-haml</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Haml plugin for Gulp</td>
+<td>Haml plugin for gulp</td>
 </tr>
 <tr>
 <td>Node Version</td>
 <td>>= 0.9</td>
 </tr>
 <tr>
-<td>Gulp Version</td>
+<td>gulp Version</td>
 <td>3.x</td>
 </tr>
 </table>
@@ -32,7 +32,7 @@ Issues with the output should be reported on [haml](https://github.com/creationi
 
 ```javascript
 
-// Gulpfile.js
+// gulpfile.js
 // Require the needed packages
 var gulp = require('gulp');
 var haml = require('gulp-haml');
@@ -55,7 +55,7 @@ gulp.task('one', function () {
 
 
 
-// Get and render all .haml files recursively 
+// Get and render all .haml files recursively
 gulp.task('haml', function () {
   gulp.src('./haml/**/*.haml')
     .pipe(haml())
