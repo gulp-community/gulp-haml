@@ -1,7 +1,7 @@
 {
   "name": "gulp-haml",
   "description": "Gulp plugin for haml",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "http://github.com/stevelacy/gulp-haml",
   "repository": {
     "type": "git",
@@ -10,11 +10,11 @@
   "author": "Steve Lacy - http://slacy.me | Fractal http://wearefractal.com",
   "main": "./index.js",
   "dependencies": {
-    "gulp-util": "^3.0.0",
+    "gulp-util": "^3.0.1",
     "haml": "^0.4.3",
     "hamljs": "^0.6.2",
     "lodash": "^2.4.1",
-    "map-stream": "~0.1.0",
+    "map-stream": "^0.1.0",
     "replace-ext": "0.0.1"
   },
   "devDependencies": {
