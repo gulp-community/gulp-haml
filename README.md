@@ -47,7 +47,7 @@ gulp.task('one', function () {
 
 
 // Get all .haml files in one folder and render
-gulp.task('one', function () {
+gulp.task('folder', function () {
   gulp.src('./haml/blue/*.haml')
     .pipe(haml())
     .pipe(gulp.dest('./haml/blue'));
