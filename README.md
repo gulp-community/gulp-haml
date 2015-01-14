@@ -66,7 +66,7 @@ gulp.task('haml', function () {
 
 // Options
 // Change file extension
-gulp.task('haml', function () {
+gulp.task('ext', function () {
   gulp.src('./haml/**/*.haml')
     .pipe(haml({ext: '.php'}))
     .pipe(gulp.dest('./php'));
@@ -76,7 +76,7 @@ gulp.task('haml', function () {
 
 // Default gulp task to run
 gulp.task('default', function(){
-  gulp.run('haml', 'one');
+  gulp.run('haml', 'ext', 'one');
 });
 
 ```
