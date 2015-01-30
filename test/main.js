@@ -29,7 +29,7 @@ describe('gulp haml', function () {
   }
 
   it('should render haml .haml to HTML .html', function (done){
-    var hamlStream = haml()
+    var hamlStream = haml();
 
     hamlStream.once('data', checkFile('creationix', 'html', done));
     hamlStream.write(fakeFile('creationix'));
