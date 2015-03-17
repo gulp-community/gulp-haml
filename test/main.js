@@ -1,3 +1,5 @@
+'use strict';
+
 var should = require('should');
 var gutil = require('gulp-util');
 var path = require('path');
@@ -23,7 +25,9 @@ describe('gulp haml', function () {
       should.exist(file.path);
       should.exist(file.contents);
       String(path.extname(file.path)).should.equal('.' + ext);
-      String(file.contents).should.equal(fs.readFileSync('test/expected/' + name + '.html', 'utf8'));
+      String(file.contents)
+        .should
+        .equal(fs.readFileSync('test/expected/' + name + '.html', 'utf8'));
       done();
     };
   }
