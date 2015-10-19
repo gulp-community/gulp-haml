@@ -13,7 +13,7 @@
     "gulp-util": "^3.0.2",
     "haml": "^0.4.3",
     "hamljs": "^0.6.2",
-    "lodash": "^2.4.1",
+    "lodash": "^3.10.1",
     "map-stream": "^0.1.0",
     "replace-ext": "0.0.1"
   },
@@ -26,10 +26,6 @@
   },
   "scripts": {
     "test": "mocha --reporter spec"
-  },
-  "licenses": {
-    "type": "MIT",
-    "url": "https://github.com/stevelacy/gulp-haml/raw/master/LICENSE"
   },
   "bugs": {
     "url": "https://github.com/stevelacy/gulp-haml/issues"
