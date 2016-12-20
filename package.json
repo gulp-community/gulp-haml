@@ -7,7 +7,7 @@
     "type": "git",
     "url": "http://github.com/stevelacy/gulp-haml.git"
   },
-  "author": "Steve Lacy - http://slacy.me | Fractal http://wearefractal.com",
+  "author": "Steve Lacy <me@slacy.me> slacy.me",
   "main": "./index.js",
   "dependencies": {
     "gulp-util": "^3.0.2",
