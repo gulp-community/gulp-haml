@@ -26,9 +26,20 @@ module.exports = function(opts) {
     if (file.isStream()) {
       return cb(new util.PluginError('gulp-haml', 'Streaming not supported'));
     }
-
-    var html = compilers[options.compiler]
-    .render(file.contents.toString('utf8'), options.compilerOpts);
+  
+    try {
+      // Render using the selected compiler
+      var html = compilers[options.compiler]
+      .render(file.contents.toString('utf8'), options.compilerOpts);
+    } catch (e) {
+      return cb(new util.PluginError({
+          plugin: 'gulp-haml', 
+          message: 'HAML conversion failed\n' + file.path +'\n'+ e
+        })
+      )
+    } 
+    
+    
     file.path = rext(file.path, options.ext);
     file.contents = new Buffer(html);
 
