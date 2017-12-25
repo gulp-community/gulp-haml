@@ -18,8 +18,8 @@
     "replace-ext": "0.0.1"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*",
+    "mocha": "3.5.3",
+    "should": "11.2.0",
     "vinyl": "^2.1.0"
   },
   "engines": {
