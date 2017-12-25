@@ -1,8 +1,8 @@
 'use strict';
 
 var should = require('should');
-var gutil = require('gulp-util');
 var path = require('path');
+var File = require('vinyl');
 var haml = require('../');
 var fs = require('fs');
 
@@ -11,7 +11,7 @@ require('mocha');
 describe('gulp haml', function () {
 
   function fakeFile (name) {
-    return new gutil.File({
+    return new File({
       base: 'test/src',
       cwd: 'test/',
       path: 'test/src/haml.haml',

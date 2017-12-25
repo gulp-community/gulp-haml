@@ -2,7 +2,7 @@
 
 var map = require('map-stream');
 var rext = require('replace-ext');
-var util = require('gulp-util');
+var PluginError = require('plugin-error');
 var _ = require('lodash');
 
 var compilers = {
@@ -24,22 +24,21 @@ module.exports = function(opts) {
       return cb(null, file); // pass along
     }
     if (file.isStream()) {
-      return cb(new util.PluginError('gulp-haml', 'Streaming not supported'));
+      return cb(new PluginError('gulp-haml', 'Streaming not supported'));
     }
-  
+
     try {
       // Render using the selected compiler
       var html = compilers[options.compiler]
       .render(file.contents.toString('utf8'), options.compilerOpts);
     } catch (e) {
-      return cb(new util.PluginError({
-          plugin: 'gulp-haml', 
+      return cb(new PluginError({
+          plugin: 'gulp-haml',
           message: 'HAML conversion failed\n' + file.path +'\n'+ e
         })
       )
-    } 
-    
-    
+    }
+
     file.path = rext(file.path, options.ext);
     file.contents = new Buffer(html);
 
